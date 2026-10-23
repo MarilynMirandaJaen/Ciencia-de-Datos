@@ -1,0 +1,78 @@
+import io                                                          # io: para leer el archivo subido desde la memoria
+import numpy as np                                                 # numpy: para trabajar con números y valores vacíos (nan)
+import pandas as pd                                                # pandas: para manejar tablas de datos (DataFrames)
+import matplotlib.pyplot as plt                                    # matplotlib: para dibujar gráficos, como el árbol
+from google.colab import files                                     # files: para mostrar el botón de carga en Colab
+from sklearn.model_selection import train_test_split               # para dividir los datos en entrenamiento y prueba
+from sklearn.tree import DecisionTreeClassifier, plot_tree         # el árbol de decisión y la función para dibujarlo
+from sklearn.metrics import accuracy_score, confusion_matrix       # para medir qué tan bien predice el modelo
+
+# Cargar el Excel
+archivo = files.upload()                                           # muestra el botón "Elegir archivos" y espera el Excel
+contenido = io.BytesIO(archivo[list(archivo.keys())[0]])           # guarda en memoria el archivo que se subió
+clientes = pd.read_excel(contenido, sheet_name="clientes")         # lee la hoja "clientes" (datos para entrenar)
+nuevos = pd.read_excel(contenido, sheet_name="clientes_nuevos")    # lee la hoja "clientes_nuevos" (datos a predecir)
+display(clientes.head())                                           # muestra las primeras 5 filas para revisar
+
+# Explorar
+print(clientes.dtypes)                                             # muestra el tipo de dato de cada columna
+print(clientes.isna().sum())                                       # cuenta cuántos valores vacíos hay por columna
+print("Duplicados:", clientes.duplicated().sum())                  # cuenta cuántas filas están repetidas
+print("cancelo:", clientes["cancelo"].unique())                    # muestra las formas distintas en que se escribió "cancelo"
+print("plan:", clientes["plan"].unique())                          # muestra las formas distintas en que se escribió "plan"
+display(clientes.describe())                                       # muestra mínimos, máximos y promedios de las columnas numéricas
+
+# Limpiar
+datos = clientes.drop(columns=["encuesta_salida"])                 # elimina la columna con información del futuro
+
+datos["cancelo"] = datos["cancelo"].str.strip().str.lower().replace({"si": "Sí", "sí": "Sí", "no": "No"})  # quita espacios, pasa a minúsculas y unifica en Sí / No
+datos["plan"] = datos["plan"].str.strip().str.lower().replace({    # quita espacios y pasa a minúsculas el plan
+    "basico": "Básico", "básico": "Básico",                        # todas las variantes de básico → "Básico"
+    "estandar": "Estándar", "estándar": "Estándar",                # todas las variantes de estándar → "Estándar"
+    "premium": "Premium"})                                         # todas las variantes de premium → "Premium"
+
+datos = datos.drop_duplicates().dropna(subset=["cancelo"])         # elimina filas repetidas y filas sin respuesta en "cancelo"
+
+datos["gasto_mensual"] = pd.to_numeric(                            # convierte gasto_mensual a número...
+    datos["gasto_mensual"].astype(str).str.replace("₡", "").str.replace(",", "").str.strip())  # ...después de quitar el ₡, la coma y los espacios
+
+datos.loc[(datos["edad"] < 18) | (datos["edad"] > 100), "edad"] = np.nan   # edades imposibles → se marcan como vacías
+datos.loc[datos["quejas"] < 0, "quejas"] = np.nan                          # quejas negativas → se marcan como vacías
+datos.loc[datos["meses_activo"] > 60, "meses_activo"] = np.nan             # más de 60 meses (imposible) → se marca como vacío
+
+for col in ["edad", "quejas", "meses_activo"]:                     # recorre las tres columnas numéricas con vacíos
+    datos[col] = datos[col].fillna(datos[col].median())            # rellena los vacíos con la mediana de esa columna
+
+print("Filas limpias:", len(datos))                                # muestra cuántas filas quedaron después de limpiar
+
+# X e Y
+planes = {"Básico": 1, "Estándar": 2, "Premium": 3}                # diccionario para convertir el plan en número
+datos["plan_num"] = datos["plan"].map(planes)                      # crea la columna plan_num (1, 2 o 3)
+datos["cancelo_num"] = datos["cancelo"].map({"No": 0, "Sí": 1})    # convierte la respuesta a número (0 = No, 1 = Sí)
+
+columnas_X = ["edad", "meses_activo", "quejas", "plan_num", "gasto_mensual"]  # las pistas que usará el modelo
+X = datos[columnas_X]                                              # X: variables independientes (las pistas)
+y = datos["cancelo_num"]                                           # y: variable dependiente (lo que queremos predecir)
+
+# Entrenar
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)  # 80% entrenamiento, 20% prueba
+
+arbol = DecisionTreeClassifier(max_depth=3, random_state=42)       # crea el árbol con máximo 3 niveles de preguntas
+arbol.fit(X_train, y_train)                                        # entrena el árbol con los datos de entrenamiento
+
+plt.figure(figsize=(18, 8))                                        # prepara un espacio grande para el dibujo
+plot_tree(arbol, feature_names=columnas_X, class_names=["No cancela", "Cancela"], filled=True)  # dibuja el árbol con colores
+plt.show()                                                         # muestra el dibujo
+
+# Evaluar
+pred = arbol.predict(X_test)                                       # el árbol predice los clientes de prueba
+print(f"Exactitud: {accuracy_score(y_test, pred):.2%}")            # porcentaje de predicciones correctas
+display(pd.DataFrame(confusion_matrix(y_test, pred),               # tabla de aciertos y errores (matriz de confusión)
+                     index=["Real No", "Real Sí"], columns=["Pred No", "Pred Sí"]))  # nombres de filas y columnas
+
+# Predecir clientes nuevos
+nuevos["plan_num"] = nuevos["plan"].map(planes)                    # convierte el plan de los clientes nuevos a número
+prob = arbol.predict_proba(nuevos[columnas_X])[:, 1]               # probabilidad de que cada cliente nuevo cancele
+nuevos["prob_cancelar"] = (prob * 100).round(1)                    # la pasa a porcentaje con un decimal
+nuevos["prediccion"] = np.where(prob >= 0.5, "Cancela", "No cancela")  # 50% o más → Cancela; menos → No cancela
+display(nuevos[["id_cliente", "meses_activo", "quejas", "plan", "prob_cancelar", "prediccion"]])  # muestra el resultado final

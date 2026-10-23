@@ -1,0 +1,56 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
+
+import io
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from google.colab import files
+
+# Botón para cargar el CSV
+print(" Selecciona el archivo CSV:")
+subido = files.upload()
+nombre = list(subido.keys())[0]
+df = pd.read_csv(io.BytesIO(subido[nombre]))
+print(f" Archivo cargado: {nombre}")
+
+print(df.shape)                      # (300, 5)
+print(df["cancelo"].value_counts())  # No 195 · Sí 105
+
+df["plan_mensual"] = (df["plan"] == "Mensual").astype(int)  # Mensual=1, Anual=0
+df["cancelo"] = (df["cancelo"] == "Sí").astype(int)         # Sí=1, No=0
+
+X = df[["meses_activo", "visitas_mes", "quejas", "plan_mensual"]]
+y = df["cancelo"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42, stratify=y)
+modelos = {
+    "Regresión logística": LogisticRegression(max_iter=1000),
+    "Árbol sin límite": DecisionTreeClassifier(random_state=42),
+    "Árbol max_depth=3": DecisionTreeClassifier(max_depth=3, random_state=42),
+}
+for nombre, m in modelos.items():
+    m.fit(X_train, y_train)
+    p = m.predict(X_test)
+    print(nombre)
+    print("  Práctica:", round(m.score(X_train, y_train), 3))
+    print("  Examen:  ", round(accuracy_score(y_test, p), 3))
+    print("  Precisión:", round(precision_score(y_test, p), 3), "| Recall:", round(recall_score(y_test, p), 3))
+    print(confusion_matrix(y_test, p))
+for nombre, m in modelos.items():
+    notas = cross_val_score(m, X, y, cv=5)
+    print(nombre, notas.round(2), "→ promedio", round(notas.mean(), 3))
+socios = pd.DataFrame([[10, 6, 1, 1],    # Socio A: plan mensual → 1
+                       [20, 10, 0, 0]],  # Socio B: plan anual → 0
+                      columns=X.columns, index=["Socio A", "Socio B"])
+mejor = modelos["Regresión logística"]
+print((mejor.predict_proba(socios)[:, 1] * 100).round(1))
+
+#Conclusión 
+#Recomiendo la regresión logística para el gimnasio. Tiene la mejor exactitud en el 
+#examen (93 %) y el mejor promedio en validación cruzada (0,877), y solo dejó escapar 3 de 31 socios 
+#que cancelaron. El árbol sin límite parecía el mejor en práctica, pero 
+#memorizó los datos: por eso nunca se debe elegir un modelo por su nota de entrenamiento.

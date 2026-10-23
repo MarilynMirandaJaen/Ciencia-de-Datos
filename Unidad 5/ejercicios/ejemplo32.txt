@@ -1,0 +1,50 @@
+# Importamos numpy para crear números
+import numpy as np
+# Importamos matplotlib para graficar
+import matplotlib.pyplot as plt
+# PolynomialFeatures permite hacer curvas (grado 1 = recta, grado alto = curva con muchas vueltas)
+from sklearn.preprocessing import PolynomialFeatures
+# Regresión lineal, la misma de la Unidad 3
+from sklearn.linear_model import LinearRegression
+# make_pipeline une dos pasos en uno solo: primero la curva, luego la regresión
+from sklearn.pipeline import make_pipeline
+# Función para medir el error cuadrático medio
+from sklearn.metrics import mean_squared_error
+# Creamos un generador de números al azar; la semilla 0 hace que siempre salgan iguales
+rng = np.random.default_rng(0)
+# 20 valores de x entre 0 y 1, ordenados; reshape los pone en forma de columna
+x = np.sort(rng.uniform(0, 1, 20)).reshape(-1, 1)
+# y sigue una onda (seno) más un poco de "ruido" al azar
+y = np.sin(2 * np.pi * x).ravel() + rng.normal(0, 0.2, 20)
+
+# 50 datos nuevos que el modelo nunca verá al aprender: el "examen"
+x_nuevo = np.sort(rng.uniform(0, 1, 50)).reshape(-1, 1)
+# Las respuestas correctas de esos 50 datos nuevos, con la misma onda y ruido
+y_nuevo = np.sin(2 * np.pi * x_nuevo).ravel() + rng.normal(0, 0.2, 50)
+
+# 300 puntos entre 0 y 1 para dibujar la curva del modelo bien suave
+x_linea = np.linspace(0, 1, 300).reshape(-1, 1)
+# Creamos una figura ancha para poner 3 gráficos lado a lado
+plt.figure(figsize=(15, 4))
+# Probamos tres modelos: grado 1, grado 4 y grado 15
+for i, (grado, nombre) in enumerate([(1, "Underfitting (grado 1)"), (4, "Buen ajuste (grado 4)"), (15, "Overfitting (grado 15)")]):
+    # Creamos el modelo con ese grado y lo entrenamos con los 20 puntos
+    modelo = make_pipeline(PolynomialFeatures(grado), LinearRegression()).fit(x, y)
+    # Error en la práctica: con los mismos 20 puntos con los que aprendió
+    error_practica = mean_squared_error(y, modelo.predict(x))
+    # Error en el examen: con los 50 puntos nuevos
+    error_examen = mean_squared_error(y_nuevo, modelo.predict(x_nuevo))
+    # Elegimos el gráfico número i+1 de los 3
+    plt.subplot(1, 3, i + 1)
+    # Dibujamos los puntos de práctica en negro
+    plt.scatter(x, y, color="black", label="datos de práctica")
+    # Dibujamos la curva que aprendió el modelo en rojo
+    plt.plot(x_linea, modelo.predict(x_linea), color="red", linewidth=2)
+    # Fijamos el eje vertical para que los 3 gráficos se puedan comparar
+    plt.ylim(-2, 2)
+    # Título con el nombre del modelo y sus dos errores
+    plt.title(f"{nombre}\nerror práctica={error_practica:.2f} · examen={error_examen:.2f}")
+    # También imprimimos los errores en texto
+print(f"{nombre:25}  error práctica={error_practica:.3f}   error examen={error_examen:.3f}")
+# Mostramos los 3 gráficos
+plt.show()

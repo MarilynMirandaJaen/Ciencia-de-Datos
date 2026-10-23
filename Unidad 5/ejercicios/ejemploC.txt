@@ -1,0 +1,52 @@
+#Parte C 
+# Importamos el conjunto de datos de tumores que ya viene dentro de scikit-learn
+from sklearn.datasets import load_breast_cancer
+# Importamos la función que separa los datos en práctica (train) y examen (test)
+from sklearn.model_selection import train_test_split
+# Importamos el modelo de regresión logística (visto en la Unidad 3)
+from sklearn.linear_model import LogisticRegression
+
+# Cargamos los datos: 569 pacientes con 30 medidas de cada tumor
+datos = load_breast_cancer()
+# X = las 30 medidas de cada paciente (variables de entrada)
+X = datos.data
+# y = lo que queremos predecir; lo cambiamos para que 1 = maligno y 0 = benigno
+y = (datos.target == 0).astype(int)
+
+# Separamos: 70 % para practicar y 30 % para el examen
+# random_state=42 hace que la división salga siempre igual
+# stratify=y mantiene la misma proporción de malignos en práctica y examen
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+# Mostramos cuántos pacientes quedaron en cada grupo
+print("Pacientes para entrenar:", len(X_train), " · para el examen:", len(X_test))
+# Contamos cuántos tumores malignos (unos) hay en el examen
+print("Malignos en el examen:", y_test.sum())
+
+# Creamos el modelo; max_iter=5000 le da tiempo suficiente para terminar de aprender
+modelo = LogisticRegression(max_iter=5000)
+# fit = entrenar: el modelo aprende con los datos de práctica
+modelo.fit(X_train, y_train)
+# predict = predecir: el modelo responde el examen
+pred = modelo.predict(X_test)
+
+# Calculamos las tres métricas; round deja 3 decimales
+# Accuracy (exactitud): porcentaje de pacientes bien clasificados
+print("Accuracy :", round(accuracy_score(y_test, pred), 3))
+# Precisión: cuando dijo "maligno", ¿cuántas veces acertó?
+print("Precisión:", round(precision_score(y_test, pred), 3))
+# Recall (sensibilidad): de los tumores malignos reales, ¿cuántos encontró?
+print("Recall   :", round(recall_score(y_test, pred), 3))
+# Imprimimos la matriz de confusión del examen
+print(confusion_matrix(y_test, pred))
+
+# Importamos matplotlib para hacer gráficos
+import matplotlib.pyplot as plt
+# Importamos la herramienta que dibuja la matriz de confusión con colores
+from sklearn.metrics import ConfusionMatrixDisplay
+
+# Dibujamos la matriz; display_labels pone nombres en lugar de 0 y 1; cmap elige los colores
+ConfusionMatrixDisplay.from_predictions(y_test, pred, display_labels=["Benigno", "Maligno"], cmap="Reds")
+# Le ponemos un título al gráfico
+plt.title("Matriz de confusión")
+# Mostramos el gráfico
+plt.show()
