@@ -1,142 +1,144 @@
 <div align="center">
 
-![Portafolio Data Analyst](assets/banner.svg)
+![Data Analyst Portfolio](assets/banner.svg)
 
-# 📊 Portafolio de Análisis de Datos
+# 📊 Data Analytics Portfolio
 
-**Marilyn Miranda Jaén** · Ingeniera Informática · Costa Rica  
+**Marilyn Miranda Jaén** · Computer Engineer · Costa Rica  
 **Data Analyst | Python | SQL Server | Power BI | DAX | Excel**
 
-*Transformando datos en información útil para la toma de decisiones.*
+*Turning data into actionable insights for better decision-making.*
+
+🌐 **Language:** 🇺🇸 English · [🇪🇸 Ver en español](README_ES.md)
 
 </div>
 
-## 👩‍💻 Sobre mí
+## 👩‍💻 About Me
 
-Soy ingeniera informática con más de cinco años de experiencia en Quality Assurance (QA), análisis y soporte de sistemas. 
-Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negocios y ciencia de datos**, aplicando limpieza, transformación, exploración, visualización y modelos analíticos para resolver problemas empresariales.
+I am a computer engineer with more than five years of experience in Quality Assurance (QA), systems analysis, and technical support. I currently develop **data analytics, business intelligence, and data science projects**, applying data cleaning, transformation, exploration, visualization, and analytical modeling to address business problems.
 
-**Herramientas:** `Python` · `Pandas` · `SQL Server` · `Power BI` · `DAX` · `Power Query` · `Excel` · `Matplotlib` · `Scikit-learn` · `GitHub`
+**Tools:** `Python` · `Pandas` · `SQL Server` · `Power BI` · `DAX` · `Power Query` · `Excel` · `Matplotlib` · `Scikit-learn` · `GitHub`
 
-## 🌟 Proyectos destacados
+## 🌟 Featured Projects
 
-### 1. 🛒 Shopify — Análisis de devoluciones en e-commerce
+### 1. 🛒 Shopify — E-Commerce Returns Analytics
 
-📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%206/Proyecto%20final)**
+📂 **[View project files — Unit 6 · Final Project](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%206/Proyecto%20final)**
 
+**Technologies:** Python, Pandas, Power BI, DAX, EDA, data cleaning and transformation.
 
-**Tecnologías:** Python, Pandas, Power BI, DAX, EDA, limpieza y transformación de datos.
+**Challenge:** Understand return patterns in an e-commerce operation and their impact on revenue and profitability.
 
-**Reto:** comprender los patrones de devoluciones de una operación de comercio electrónico y su impacto sobre los ingresos y la rentabilidad.
+**What I did:**
+- Analyzed **60,000 transactions** and prepared the data for analytical reporting.
+- Explored revenue, discounts, product categories, countries, return reasons, and related costs.
+- Integrated order and return information and created customer and product **Golden Records**.
+- Built a dashboard with financial, tactical, and operational indicators.
 
-**Qué hice:**
-- Analicé un conjunto de **60.000 transacciones** y preparé los datos para su explotación analítica.
-- Exploré ingresos, descuentos, categorías, países, motivos de devolución y costos asociados.
-- Integré información de pedidos y devoluciones; elaboré **Golden Records** de clientes y productos.
-- Desarrollé un dashboard con indicadores financieros, tácticos y operativos.
+**Dashboard results:** **50.86M** in valid revenue, **24.74M** in profit from non-returned orders, and **14.72%** of revenue associated with returns (in the currency units displayed in the report).
 
-**Resultados observados en el dashboard:** **50,86 M** en ingresos válidos, **24,74 M** de utilidad en pedidos no devueltos y **14,72 %** de ingresos asociados a devoluciones (en las unidades monetarias mostradas por el reporte).
+![Shopify dashboard preview](assets/shopify_dashboard.png)
 
-![Vista del dashboard Shopify](assets/shopify_dashboard.png)
+> **Key learning:** Connecting data quality, exploratory analysis, and business metrics to investigate product returns.
 
-> **Aprendizaje:** cómo conectar calidad de datos, análisis exploratorio e indicadores de negocio para estudiar un problema real de devoluciones.
+### 2. 👥 TicoShop — Customer Segmentation and Churn Prediction
 
-### 2. 👥 TicoShop — Segmentación y predicción de abandono de clientes
+📂 **[View project files — Unit 5 · Exam](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%205/examen)**
 
-📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%205/examen)**
+**Technologies:** Python, Pandas, exploratory data analysis, segmentation, logistic regression, scikit-learn.
 
+**Challenge:** Identify customer profiles at greater risk of churn and support retention strategies.
 
-**Tecnologías:** Python, Pandas, análisis exploratorio, segmentación, regresión logística, scikit-learn.
+**What I did:**
+- Analyzed **2,000 customers**, including purchase behavior, app usage, and complaints.
+- Developed four segments: **Digital Customers, At Risk, High Value, and Traditional Customers**.
+- Trained a **logistic regression** model to classify churn.
+- Interpreted factors associated with higher churn risk, including days since last purchase and complaints.
 
-**Reto:** identificar perfiles de clientes con mayor riesgo de abandono y aportar información para acciones de retención.
+**Results:** **80.5% accuracy** and **74.4% recall** for churn detection. The *At Risk* segment showed **70.69%** churn, compared with **0.70%** for *High Value* customers.
 
-**Qué hice:**
-- Analicé **2.000 clientes** y variables de comportamiento de compra, uso de la aplicación y quejas.
-- Construí cuatro segmentos: **Digitales, En riesgo, Alto valor y Tradicionales**.
-- Entrené un modelo de **regresión logística** para clasificar el abandono.
-- Interpreté factores asociados con mayor riesgo, como los días sin comprar y las quejas.
+![TicoShop customer segments](assets/ticoshop_segmentos.svg)
 
-**Resultados:** **80,5 % de exactitud** y **74,4 % de recall** para la clase de abandono. El segmento *En riesgo* presentó **70,69 %** de abandono; el de *Alto valor*, **0,70 %**.
+> **Key learning:** Turning customer analytics and classification metrics into actionable retention insights. The visual above is a portfolio summary graphic, not a screenshot of the original project.
 
-![Resumen visual de los segmentos TicoShop](assets/ticoshop_segmentos.svg)
+### 3. 💊 Pharmacy — Sales Analytics with SQL Server and Power BI
 
-> **Aprendizaje:** transformar análisis de clientes y métricas de clasificación en recomendaciones para retención. La visualización anterior es un resumen elaborado para este portafolio, no una captura del proyecto original.
+📂 **[View project files — Unit 4 · Exam](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/examen)**
 
-### 3. 💊 Farmacia — Análisis de ventas con SQL Server y Power BI
+**Technologies:** SQL Server, SQL, Power BI, Excel, data validation and cleaning.
 
-📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/examen)**
+**Challenge:** Build a reliable dataset to assess sales, branches, and products.
 
+**What I did:**
+- Identified and corrected duplicates, nulls, invalid dates, and mismatches between quantities, prices, and totals.
+- Used SQL queries to validate information and relationships between entities.
+- Built visualizations of sales by branch and best-selling products.
 
-**Tecnologías:** SQL Server, SQL, Power BI, Excel, validación y limpieza de datos.
+**Reported results:** Approximately **CRC 2.8 million in sales**, **60 customers**, and **25 medications**.
 
-**Reto:** consolidar información confiable para evaluar ventas, sucursales y productos.
+![Pharmacy sales dashboard](assets/farmacia_dashboard.png)
 
-**Qué hice:**
-- Detecté y corregí registros duplicados, nulos, fechas inválidas y discrepancias entre cantidades, precios y totales.
-- Utilicé consultas SQL para validar información y relaciones entre entidades.
-- Construí visualizaciones de ventas por sucursal y productos más vendidos.
+> **Key learning:** Why data quality and integrity are essential before building business metrics.
 
-**Resultados reportados:** alrededor de **₡2,8 millones en ventas**, **60 clientes** y **25 medicamentos**.
+### 4. 📈 Business Performance — Executive Dashboard
 
-![Dashboard de ventas de farmacia](assets/farmacia_dashboard.png)
+📂 **[View project files — Unit 4 · Quiz](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/quiz)**
 
-> **Aprendizaje:** la importancia de la calidad e integridad de los datos antes de construir indicadores de negocio.
+**Technologies:** Power BI, DAX, Excel, KPIs, Business Intelligence.
 
-### 4. 📈 Indicadores empresariales — Dashboard ejecutivo
+**Challenge:** Provide visibility into financial and operational indicators to support management decisions.
 
-📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/quiz)**
+**What I did:**
+- Designed **total sales, net profit, and on-time delivery** KPIs.
+- Analyzed sales trends, production, international orders, and customer acquisition channels.
+- Created a dashboard with interactive charts and filters.
 
+**Dashboard results:** **CRC 982,738,545 in sales**, **CRC 122,529,508 in net profit**, and **86% delivery compliance**.
 
-**Tecnologías:** Power BI, DAX, Excel, KPIs, Business Intelligence.
+![Business performance dashboard](assets/indicadores_dashboard.png)
 
-**Reto:** dar visibilidad a indicadores financieros y operativos para apoyar decisiones empresariales.
+> **Key learning:** Translating metrics from different business functions into a clear executive view.
 
-**Qué hice:**
-- Diseñé indicadores de **ventas totales, utilidad neta y cumplimiento de entregas**.
-- Analicé tendencias de ventas, producción, pedidos internacionales y captación de clientes por canal.
-- Preparé un dashboard con visualizaciones y filtros interactivos.
+### 5. 🐍 Exploratory Sales Analysis — Python Desktop Application
 
-**Resultados del reporte:** **₡982.738.545 en ventas**, **₡122.529.508 de utilidad neta** y **86 % de cumplimiento de entregas**.
+📂 **[View project files — Unit 3 · Final Project](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%203/Proyecto_Final)**
 
-![Dashboard de indicadores empresariales](assets/indicadores_dashboard.png)
+**Technologies:** Python, Pandas, Matplotlib, Tkinter, CSV, descriptive statistics.
 
-> **Aprendizaje:** convertir métricas de distintas áreas de negocio en una vista ejecutiva clara.
+**Challenge:** Make it easier to explore and validate sales data from CSV files.
 
-### 5. 🐍 Análisis exploratorio de ventas — Aplicación en Python
+**What I did:**
+- Explored **1,185 sales records** and identified missing values, duplicates, inconsistencies, and outliers.
+- Applied filters, aggregations, statistical summaries, and charts to identify patterns.
+- Developed a **Tkinter** interface to load, filter, and visualize data.
 
-📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%203/Proyecto_Final)**
-
-
-**Tecnologías:** Python, Pandas, Matplotlib, Tkinter, CSV, estadística descriptiva.
-
-**Reto:** facilitar la exploración y validación de información comercial desde archivos CSV.
-
-**Qué hice:**
-- Exploré **1.185 registros de ventas** e identifiqué nulos, duplicados, inconsistencias y valores atípicos.
-- Apliqué filtros, agrupaciones, estadísticas y gráficos para reconocer patrones.
-- Desarrollé una interfaz con **Tkinter** para cargar datos, filtrarlos y visualizar resultados.
-
-> **Aprendizaje:** combinar análisis de datos con una interfaz sencilla para facilitar su uso.
+> **Key learning:** Combining data analysis with a simple graphical interface to improve usability.
 
 ---
 
-## 🧰 Habilidades aplicadas
+## 🧰 Applied Skills
 
-| Área | Tecnologías y prácticas |
+| Area | Technologies and practices |
 |---|---|
-| Preparación de datos | Python, Pandas, Excel, Power Query, validación, limpieza |
-| Consultas y bases de datos | SQL, SQL Server, integridad y análisis relacional |
+| Data preparation | Python, Pandas, Excel, Power Query, validation, cleaning |
+| Databases and queries | SQL, SQL Server, data integrity, relational analysis |
 | Business Intelligence | Power BI, DAX, KPIs, dashboards |
-| Exploración y visualización | EDA, Matplotlib, estadística descriptiva |
-| Analítica predictiva | Scikit-learn, regresión logística, métricas de clasificación |
-| Comunicación de resultados | Insights, interpretación de KPIs, recomendaciones de negocio |
+| Exploration and visualization | EDA, Matplotlib, descriptive statistics |
+| Predictive analytics | Scikit-learn, logistic regression, classification metrics |
+| Communicating results | Insights, KPI interpretation, business recommendations |
 
-## 🎓 Formación
+## 🎓 Education
 
-- **Licenciatura en Ingeniería Informática, énfasis en Desarrollo Web** — UNED.
-- **Bachillerato en Informática Empresarial** — Universidad de Costa Rica (UCR).
-- Formación complementaria en **Ciencia de Datos, Análisis de Datos e Inteligencia Artificial**.
+- **Licentiate Degree in Computer Engineering, Web Development emphasis** — UNED.
+- **Bachelor's Degree in Business Informatics** — University of Costa Rica (UCR).
+- Additional training in **Data Science, Data Analytics, and Artificial Intelligence**.
+
+## 📁 Repository Structure
+
+The project links above point to existing folders in this repository, organized by course unit. A project-specific `README.md` can be added to each folder to document its goals, data, methodology, findings, and reproduction steps.
+
+**Note:** The PNG images are previews from the shared PDF reports. The banner and TicoShop infographic are portfolio presentation graphics. Metrics are from practice projects, not live production operations. This package contains the READMEs and visuals only; original datasets and project files are kept in their existing repository folders.
 
 ---
 
-<div align="center"><strong>Gracias por visitar mi portafolio.</strong><br/>📍 Costa Rica · Interés profesional: Data Analytics &amp; Business Intelligence</div>
+<div align="center"><strong>Thank you for visiting my portfolio.</strong><br/>📍 Costa Rica · Professional interests: Data Analytics &amp; Business Intelligence</div>
