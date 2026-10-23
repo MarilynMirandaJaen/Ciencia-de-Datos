@@ -22,6 +22,9 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 
 ### 1. 🛒 Shopify — Análisis de devoluciones en e-commerce
 
+📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%206/Proyecto%20final)**
+
+
 **Tecnologías:** Python, Pandas, Power BI, DAX, EDA, limpieza y transformación de datos.
 
 **Reto:** comprender los patrones de devoluciones de una operación de comercio electrónico y su impacto sobre los ingresos y la rentabilidad.
@@ -39,6 +42,9 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 > **Aprendizaje:** cómo conectar calidad de datos, análisis exploratorio e indicadores de negocio para estudiar un problema real de devoluciones.
 
 ### 2. 👥 TicoShop — Segmentación y predicción de abandono de clientes
+
+📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%205/examen)**
+
 
 **Tecnologías:** Python, Pandas, análisis exploratorio, segmentación, regresión logística, scikit-learn.
 
@@ -58,6 +64,9 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 
 ### 3. 💊 Farmacia — Análisis de ventas con SQL Server y Power BI
 
+📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/examen)**
+
+
 **Tecnologías:** SQL Server, SQL, Power BI, Excel, validación y limpieza de datos.
 
 **Reto:** consolidar información confiable para evaluar ventas, sucursales y productos.
@@ -75,6 +84,9 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 
 ### 4. 📈 Indicadores empresariales — Dashboard ejecutivo
 
+📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%204/quiz)**
+
+
 **Tecnologías:** Power BI, DAX, Excel, KPIs, Business Intelligence.
 
 **Reto:** dar visibilidad a indicadores financieros y operativos para apoyar decisiones empresariales.
@@ -91,6 +103,9 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 > **Aprendizaje:** convertir métricas de distintas áreas de negocio en una vista ejecutiva clara.
 
 ### 5. 🐍 Análisis exploratorio de ventas — Aplicación en Python
+
+📂 **[Ver archivos del proyecto](https://github.com/MarilynMirandaJaen/Ciencia-de-Datos/tree/main/Unidad%203/Proyecto_Final)**
+
 
 **Tecnologías:** Python, Pandas, Matplotlib, Tkinter, CSV, estadística descriptiva.
 
@@ -125,4 +140,3 @@ Actualmente desarrollo proyectos de **análisis de datos, inteligencia de negoci
 ---
 
 <div align="center"><strong>Gracias por visitar mi portafolio.</strong><br/>📍 Costa Rica · Interés profesional: Data Analytics &amp; Business Intelligence</div>
-
