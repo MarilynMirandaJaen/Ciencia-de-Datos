@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="350" viewBox="0 0 1050 350" role="img" aria-label="Segmentación TicoShop: número de clientes y tasa de abandono por segmento">
+<rect width="1050" height="350" rx="18" fill="#f4f8fc"/>
+<text x="40" y="54" font-size="27" font-family="Arial" font-weight="bold" fill="#173451">TicoShop · Segmentación de clientes</text>
+<text x="40" y="84" font-size="16" font-family="Arial" fill="#52687b">2.000 clientes · Resumen de resultados del proyecto</text>
+<g font-family="Arial" font-size="17" fill="#173451">
+<text x="40" y="136">Digitales</text><text x="40" y="192">En riesgo</text><text x="40" y="248">Alto valor</text><text x="40" y="304">Tradicionales</text>
+</g>
+<g fill="#2c82b9"><rect x="195" y="113" width="291" height="29" rx="6"/><rect x="195" y="169" width="174" height="29" rx="6"/><rect x="195" y="225" width="144" height="29" rx="6"/><rect x="195" y="281" width="392" height="29" rx="6"/></g>
+<g font-family="Arial" font-size="17" fill="#173451" font-weight="bold"><text x="500" y="134">582 clientes</text><text x="385" y="190">348 clientes</text><text x="355" y="246">287 clientes</text><text x="602" y="302">783 clientes</text></g>
+<rect x="810" y="101" width="200" height="218" rx="14" fill="#e3eef5"/>
+<g font-family="Arial" font-size="16" fill="#173451"><text x="830" y="132" font-weight="bold">Tasa de abandono</text><text x="830" y="163">Digitales: 10,82 %</text><text x="830" y="205">En riesgo: 70,69 %</text><text x="830" y="247">Alto valor: 0,70 %</text><text x="830" y="289">Tradicionales: 15,20 %</text></g>
+</svg>
