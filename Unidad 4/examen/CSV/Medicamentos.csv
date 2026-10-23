@@ -1,0 +1,26 @@
+﻿Medicamento_ID,Nombre,Categoria,Precio_Unitario,Requiere_Receta
+1,Acetaminofén 500mg,Analgésicos,1200,No
+2,Ibuprofeno 400mg,Analgésicos,1500,No
+3,Diclofenaco 50mg,Analgésicos,1800,Sí
+4,Amoxicilina 500mg,Antibióticos,3500,Sí
+5,Azitromicina 500mg,Antibióticos,4200,Sí
+6,Ciprofloxacino 500mg,Antibióticos,3900,Sí
+7,Loratadina 10mg,Antialérgicos,1600,No
+8,Cetirizina 10mg,Antialérgicos,1700,No
+9,Vitamina C 1g,Vitaminas,2200,No
+10,Complejo B,Vitaminas,2500,No
+11,Vitamina D3,Vitaminas,2800,No
+12,Jarabe para la Tos,Antigripales,2100,No
+13,Descongestionante Nasal,Antigripales,1900,No
+14,Paracetamol Pediátrico,Antigripales,1750,No
+15,Omeprazol 20mg,Gastrointestinales,2300,No
+16,Ranitidina 150mg,Gastrointestinales,2000,No
+17,Suero Oral,Gastrointestinales,900,No
+18,Crema Hidrocortisona,Dermatológicos,2600,No
+19,Loción de Calamina,Dermatológicos,1800,No
+20,Protector Solar FPS 50,Dermatológicos,6500,No
+21,Losartán 50mg,Cardiovasculares,3200,Sí
+22,Atorvastatina 20mg,Cardiovasculares,3800,Sí
+23,Enalapril 10mg,Cardiovasculares,2900,Sí
+24,Metformina 850mg,Cardiovasculares,2400,Sí
+25,Ácido Acetilsalicílico 100mg,Cardiovasculares,1400,No

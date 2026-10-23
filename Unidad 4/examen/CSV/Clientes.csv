@@ -1,0 +1,61 @@
+﻿Cliente_ID,Nombre,Telefono,Provincia,Tipo_Seguro
+1,María Fernández,83767393,Heredia,Ninguno
+2,Juan Pérez,88013380,Guanacaste,Privado
+3,Ana Gómez,89037972,Limón,CCSS
+4,Carlos Rodríguez,88963259,Limón,Ninguno
+5,Laura Jiménez,84079983,Puntarenas,Ninguno
+6,Diego Castro,84960368,Limón,CCSS
+7,Sofía Rojas,81236916,Cartago,Ninguno
+8,Andrés Mora,88183854,San José,CCSS
+9,Valeria Chacón,84896553,Alajuela,Ninguno
+10,Luis Herrera,81710270,Heredia,Ninguno
+11,Camila Araya,87824452,Puntarenas,Privado
+12,José Fernández,81571600,Cartago,Ninguno
+13,Gabriela Salas,89347542,Guanacaste,CCSS
+14,Kevin Brenes,87181508,San José,CCSS
+15,Paola Quirós,82484177,San José,CCSS
+16,Esteban Alvarado,88602219,Alajuela,Ninguno
+17,Natalia Cordero,86753266,Heredia,Privado
+18,Mario Sánchez,83534996,Alajuela,Ninguno
+19,Fernanda Ureña,81623098,Heredia,CCSS
+20,Ricardo Gómez,82251971,Limón,CCSS
+21,Melissa Zamora,84499093,Guanacaste,Ninguno
+22,Alejandro Vega,82189954,San José,Ninguno
+23,Karla Monge,88991413,Puntarenas,Privado
+24,Daniel Rodríguez,84373552,Cartago,CCSS
+25,Priscilla Barrantes,89989619,Heredia,Privado
+26,Rebeca Solís,87127383,Heredia,Ninguno
+27,Fabián Guzmán,87472275,Cartago,Privado
+28,Tatiana Campos,87485958,Cartago,CCSS
+29,Roberto Miranda,82564685,Alajuela,Ninguno
+30,Silvia Navarro,89321679,San José,Privado
+31,Óscar Delgado,82176361,Puntarenas,Ninguno
+32,Marcela Vindas,89760606,Alajuela,Ninguno
+33,Iván Rojas,86345911,Puntarenas,Ninguno
+34,Grettel Salazar,82890953,Alajuela,Ninguno
+35,Randall Cordero,83853667,Guanacaste,Privado
+36,Vanessa Ugalde,86576380,Cartago,Ninguno
+37,Mauricio Zúñiga,86144128,Alajuela,CCSS
+38,Wendy Chavarría,83830189,San José,CCSS
+39,Sergio Blanco,88192649,Cartago,CCSS
+40,Adriana Rivera,81615679,Guanacaste,Ninguno
+41,Bryan Contreras,85052586,Heredia,CCSS
+42,Yolanda Méndez,81239289,Cartago,Privado
+43,Emmanuel Vargas,89491517,Heredia,Ninguno
+44,Cindy Ramírez,85147458,Alajuela,CCSS
+45,Warner Aguilar,82163250,Heredia,Privado
+46,Shirley Duarte,89106296,San José,Privado
+47,Pablo Cascante,81875328,Limón,Privado
+48,Ericka Chaves,85863289,San José,Privado
+49,Alonso Villalobos,85170724,Alajuela,Privado
+50,Marjorie Obando,82165198,Limón,Privado
+51,Kenneth Solano,83451397,Alajuela,Ninguno
+52,Yorleny Umaña,89035836,San José,Privado
+53,Federico Brenes,83341909,Guanacaste,Ninguno
+54,Hazel Porras,89037404,San José,CCSS
+55,Minor Araya,87135843,Limón,CCSS
+56,Xinia Calderón,87186739,Puntarenas,Privado
+57,Geovanny Rojas,89127865,Puntarenas,Privado
+58,Lourdes Hidalgo,86167001,Alajuela,Ninguno
+59,Wilmer Castro,85630206,Alajuela,Ninguno
+60,Yamileth Barquero,81171690,Heredia,Ninguno
