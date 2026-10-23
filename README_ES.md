@@ -138,12 +138,6 @@ Soy ingeniera informática con más de cinco años de experiencia en Quality Ass
 - **Bachillerato en Informática Empresarial** — Universidad de Costa Rica (UCR).
 - Formación complementaria en **Ciencia de Datos, Análisis de Datos e Inteligencia Artificial**.
 
-## 📁 Estructura del repositorio
-
-Los enlaces anteriores conducen a las carpetas existentes en este repositorio, organizadas por unidad. Puedes añadir un `README.md` dentro de cada carpeta de proyecto para documentar objetivo, datos, metodología, hallazgos y pasos para reproducirlo.
-
-**Nota:** las imágenes PNG incluidas son capturas de los reportes PDF compartidos; el banner y la infografía de TicoShop son gráficos de presentación. Los valores corresponden a resultados de proyectos de práctica, no a métricas de una empresa en producción. Este paquete incluye los archivos README y las imágenes, no los datos ni archivos originales de los proyectos.
-
 ---
 
 <div align="center"><strong>Gracias por visitar mi portafolio.</strong><br/>📍 Costa Rica · Interés profesional: Data Analytics &amp; Business Intelligence</div>
