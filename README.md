@@ -133,12 +133,6 @@ I am a computer engineer with more than five years of experience in Quality Assu
 - **Bachelor's Degree in Business Informatics** — University of Costa Rica (UCR).
 - Additional training in **Data Science, Data Analytics, and Artificial Intelligence**.
 
-## 📁 Repository Structure
-
-The project links above point to existing folders in this repository, organized by course unit. A project-specific `README.md` can be added to each folder to document its goals, data, methodology, findings, and reproduction steps.
-
-**Note:** The PNG images are previews from the shared PDF reports. The banner and TicoShop infographic are portfolio presentation graphics. Metrics are from practice projects, not live production operations. This package contains the READMEs and visuals only; original datasets and project files are kept in their existing repository folders.
-
 ---
 
 <div align="center"><strong>Thank you for visiting my portfolio.</strong><br/>📍 Costa Rica · Professional interests: Data Analytics &amp; Business Intelligence</div>
